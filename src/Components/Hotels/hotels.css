@@ -1,0 +1,134 @@
+.hotel-section {
+  margin-left: 320px !important;
+  position: relative;
+  bottom: 26em;
+  width: 77%;
+}
+.left-wrapper h1 {
+  font-weight: 500;
+}
+
+.hotel-search {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: 300px;
+  width: 700px;
+  border-radius: 5px ;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+    
+}
+.hotel-search input {
+  
+  width: 550px;
+  height: 56px;
+  margin-top: 40px;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  padding-left: 60px;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 16px;
+  
+}
+.input-wrapper:hover{
+  color: #36c;
+}
+.hotel-search input:hover
+{
+  border: 1px solid #36c;
+}
+.input-wrapper {
+  position: relative;
+}
+.location-icon {
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 20px;
+  top: 70%;
+  transform: translateY(-50%);
+  color: #8d8d8d;
+
+}
+.location-icon:hover{
+  color: #36c;
+}
+
+.select-option{
+  width: 614px;
+  height: 56px;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.days{
+  width: 45%;
+  height: 56px;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  background: white;
+  cursor: pointer;
+  
+}
+.person {
+  width: 45%;
+  height: 56px;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  background: white;
+  cursor: pointer;
+}
+.search-button {
+  width: 614px;
+  height: 56px;
+  margin-top: 30px;
+  border-radius: 5px;
+  line-height: 20px;
+  display: flex;
+  justify-content: end;
+}
+.search-button button {
+  width: 220px;
+  height: 52px;
+  border-radius: 5px;
+  border: none;
+  background: #f77728;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.cancel-information {
+  position: relative;
+  width: 700px;
+  height: auto;
+  margin-top: 3em;
+}
+.cancel-information img {
+  width: 100%;
+  cursor: pointer;
+}
+
+
+.bank-offer {
+  width: 975px;
+  height: 166px;
+  margin-top: 30px;
+  display: flex;
+  padding: 10px;
+}
+.bank-offer div{
+  width: 33.3%;
+ 
+}
+.bank-offer div img {
+  width: 95%;
+}
