@@ -1,0 +1,10 @@
+.hotelResult {
+  width: 1264px !important;
+  margin: auto;
+  padding: auto;
+}
+.result-section {
+  display: grid;
+  grid-template-columns: 4,1fr;
+  grid-template-rows: auto;
+}
