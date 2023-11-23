@@ -1,10 +1,37 @@
-.hotelResult {
-  width: 1264px !important;
+.main-result {
+  width: auto;
+  height: auto;
+  /* margin-top: 30px !important; */
+  
+}
+.result-section-container1 {
+  width: auto;
   margin: auto;
-  padding: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
 }
-.result-section {
+.result-filter {
+  background: red;
+  height: 50px !important;
+  margin-top: 35px;
+}
+.filter-title {
+  width: 65%;
+  background: red;
+}
+.result-search{
+  width: 32%;
+
+  background: blue !important;
+}
+
+.result-section-container2 {
   display: grid;
-  grid-template-columns: 4,1fr;
+  grid-template-columns: repeat(4,1fr);
   grid-template-rows: auto;
+  
 }
+

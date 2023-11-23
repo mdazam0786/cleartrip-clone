@@ -11,11 +11,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import FlightResult from "./FlightResult";
+import { useNavigate } from "react-router-dom";
 
 export default function Flights() {
   const [flightData, setFlightData] = useState(null);
   const [searchFlight, setSearchFlight] = useState(null);
   const [selectedDay, setSelectedDay] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     console.log("Azam");
@@ -43,6 +45,8 @@ export default function Flights() {
     // console.log(data);
     console.log(data?.data?.flights);
     setFlightData(data?.data?.flights);
+
+    navigate("/flightResult", {state: {flightData11: data?.data?.flights}})
   }
 
   // useEffect(() => {
@@ -144,7 +148,7 @@ export default function Flights() {
           </div>
         </div>
       </div>
-      {flightData && <FlightResult flResult={flightData} />}
+      {/* {flightData && <FlightResult flResult={flightData} />} */}
     </div>
   );
 }

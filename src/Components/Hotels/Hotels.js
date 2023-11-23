@@ -9,14 +9,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import HotelResult from "./HotelResult";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-
 
 export default function Hotels(props) {
   const [hotelData, setHotelData] = useState(null);
   const [searchParameter, setSearchParameter] = useState(null);
   const [selectedDay, setSelectedDay] = useState("");
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     console.log("Azam");
@@ -46,11 +44,11 @@ export default function Hotels(props) {
     console.log(data?.data?.hotels);
     setHotelData(data?.data?.hotels);
     // console.log(hotelData);
-   navigate("/hotelResult");
 
+    // Pass the hotelData to the HotelResult component
+    navigate("/hotelResult", { state: { hotelData11: data?.data?.hotels } });
   }
 
-  
   // useEffect(() => {
   //   Apicall();
   // }, [selectedDay]);
@@ -70,7 +68,6 @@ export default function Hotels(props) {
 
             {/* hotel-search  */}
             <div className="hotel-search">
-
               {/* 1-> input-wrapper  */}
               <div className="input-wrapper">
                 <CiLocationOn className="location-icon" />
@@ -103,12 +100,7 @@ export default function Hotels(props) {
 
               {/* 3-> searct-button  */}
               <div className="search-button">
-                  <button //onClick={Apicall}
-                    onClick={() =>{
-                      Apicall();
-                    
-                    }}
-                  >Search Hotels</button>
+                <button onClick={Apicall}>Search Hotels</button>
               </div>
             </div>
             <div className="cancel-information">
@@ -132,7 +124,7 @@ export default function Hotels(props) {
         </div>
       </div>
       {/* {hotelData && <HotelResult result={hotelData} />} */}
-      {/* {hotelData && <Link to="/hotelResult"/>} */}
+      
     </div>
   );
 }
