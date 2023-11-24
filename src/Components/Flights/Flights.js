@@ -15,15 +15,21 @@ import { useNavigate } from "react-router-dom";
 
 export default function Flights() {
   const [flightData, setFlightData] = useState(null);
-  const [searchFlight, setSearchFlight] = useState(null);
+  const [searchSource, setSearchSource] = useState(null);
+  const [searchDestination, setSearchDestination] = useState(null);
   const [selectedDay, setSelectedDay] = useState("");
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
     console.log("Azam");
     console.log(e.target.value);
-    setSearchFlight(e.target.value);
+    setSearchSource(e.target.value);
   };
+
+  const handleSearchDestination = (e) => {
+    console.log(e.target.value);
+    setSearchDestination(e.target.value);
+  }
 
   async function Apicall() {
     console.log("getting hotels");
@@ -33,7 +39,7 @@ export default function Flights() {
       : "";
     console.log(formattedDay);
 
-    const Url = `https://academics.newtonschool.co/api/v1/bookingportals/flight/?search={"source":"${searchFlight}","destination":"${searchFlight}"}&day="${formattedDay}`;
+    const Url = `https://academics.newtonschool.co/api/v1/bookingportals/flight/?search={"source":"${searchSource}","destination":"${searchDestination}"}&day="${formattedDay}`;
 
     console.log(Url);
     const response = await fetch(Url, {
@@ -111,7 +117,8 @@ export default function Flights() {
                 </div>
                 <div className="select-where-to">
                   <RiFlightLandFill className="flight-icon" />
-                  <input type="text" placeholder="Where to?" />
+                  <input type="text" placeholder="Where to?" 
+                  onChange={handleSearchDestination}/>
                 </div>
               </div>
 

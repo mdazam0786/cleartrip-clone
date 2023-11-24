@@ -1,8 +1,9 @@
 
 .hotel-cart {
     height: auto;
-    width: 300px;
+    width: auto;
     margin: auto;
+    
 }
 .hotel-cart-image {
     width: 100%;

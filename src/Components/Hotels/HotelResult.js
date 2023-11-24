@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import HotelResultCard from "./HotelResultCard";
 import { useLocation } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
 
 
 
@@ -30,7 +31,7 @@ export default function HotelResult(props) {
               </select>
             </div>
             <div className="content">
-              Sort by:
+              
               <select>
                 <option value="1">Recommended</option>
                 <option value="1">Top-rated</option>
@@ -39,7 +40,7 @@ export default function HotelResult(props) {
               </select>
             </div>
             <div className="content">
-              Sort by:
+              
               <select>
                 <option value="1">Recommended</option>
                 <option value="1">Top-rated</option>
@@ -48,7 +49,7 @@ export default function HotelResult(props) {
               </select>
             </div>
             <div className="content">
-              Sort by:
+              
               <select>
                 <option value="1">Recommended</option>
                 <option value="1">Top-rated</option>
@@ -57,7 +58,7 @@ export default function HotelResult(props) {
               </select>
             </div>
             <div className="content">
-              Sort by:
+              
               <select>
                 <option value="1">Recommended</option>
                 <option value="1">Top-rated</option>
@@ -66,7 +67,7 @@ export default function HotelResult(props) {
               </select>
             </div>
             <div className="content">
-              Sort by:
+              
               <select>
                 <option value="1">Recommended</option>
                 <option value="1">Top-rated</option>
@@ -77,7 +78,8 @@ export default function HotelResult(props) {
           </div>
         </div>
         <div className="result-search">
-          <input type="text" placeholder="Azam"/>
+          <IoIosSearch className="hotel-result-icon"/>
+          <input type="text" />
         </div>
       </div>
       <div className="result-section-container2">
