@@ -1,0 +1,27 @@
+
+.hotel-cart {
+    height: auto;
+    width: auto;
+    margin: auto;
+    
+}
+.hotel-cart-image {
+    width: 100%;
+    height: 240px;
+    border-radius: 15px;
+}
+.hotel-cart-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.hotel-cart-content {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+
