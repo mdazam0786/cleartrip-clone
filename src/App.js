@@ -1,11 +1,11 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Hotels from "./Components/Hotels/Hotels";
 import Flights from "./Components/Flights/Flights";
 import HotelResult from "./Components/Hotels/HotelResult";
-import FlightResult from "./Components/Flights/FlightResult";
+import HotelDesription from "./Components/Hotels/HotelDesription";
 
 function App() {
   return (
@@ -16,9 +16,7 @@ function App() {
         <Route exact path="/flights" element={<Flights/>} />
         <Route exact path="/hotels" element={<Hotels />} />
         <Route exact path="/hotelResult" element={<HotelResult/>} />
-        <Route path="/hotelResult" element={<FlightResult/>} />
-
-
+        <Route path="/hotelDescription" element={<HotelDesription/>} />
         
       </Routes>
     </Router>

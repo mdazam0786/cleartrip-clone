@@ -1,17 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HotelResultCard from "./HotelResultCard";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
 
 
+
 export default function HotelResult(props) {
+  const [hotelId, setHotelId] = useState(null);
+  const [hotelDetails, setHotelDetails] = useState(null);
+  const navigate = useNavigate();
+
+  async function Apicall(id) {
+    // setHotelId("6527dc50de44dd75f5271d99");
+    console.log(id);
+    setHotelId(id);
+
+    console.log("getting hotels details");
+    console.log(hotelId);
+
+
+
+    const Url=`https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`;
+
+    // const Url="https://academics.newtonschool.co/api/v1/bookingportals/hotel/6527dc50de44dd75f5271d99";
+
+
+
+    console.log(Url);
+    const response = await fetch(Url, {
+      method: "GET",
+      headers: { projectID: "f104bi07c490" },
+    });
+    const data = await response.json();
+    console.log(response);
+    console.log(data);
+    console.log(data?.data);
+    setHotelDetails(data?.data);
+    // console.log(hotelData);
+
+    // Pass the hotelData to the HotelResult component
+    navigate(`/hotelDescription`, { state: { hotelDetailsData1: data?.data } });
+    // navigate("/hotelDescription", { state: { hotelDetailsData1: data?.data} });
+  }
+
+
   const location = useLocation();
   const hotelData1 = location.state?.hotelData11 || [];
   useEffect(() => {
     console.log("Azam");
-    console.log(hotelData1);
-  }, [hotelData1]);
+    // console.log(hotelData1);
+    // Apicall();
+  }, []);
 
   return (
     <div className="main-result">
@@ -84,7 +124,9 @@ export default function HotelResult(props) {
       </div>
       <div className="result-section-container2">
         {hotelData1.map((item) => (
-          <div className="result-section" key={item.id}>
+          <div className="result-section" onClick={()=>{
+            Apicall(item._id);
+          }}>
             <HotelResultCard
               image={item.images[0]}
               amenities={item.amenities}
