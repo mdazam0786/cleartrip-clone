@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
-import HotelResult from "./HotelResult";
+// import HotelResult from "./HotelResult";
 import { useNavigate } from "react-router-dom";
 
 export default function Hotels(props) {
@@ -22,6 +22,7 @@ export default function Hotels(props) {
     setSearchParameter(e.target.value);
   };
 
+  
   async function Apicall() {
     console.log("getting hotels");
     console.log(selectedDay);
@@ -86,6 +87,7 @@ export default function Hotels(props) {
                     className="date-option"
                     selected={selectedDay}
                     onChange={(date) => setSelectedDay(date)}
+                    dateFormat="eee, MMM dd"
                   />
                 </div>
                 <div className="person">

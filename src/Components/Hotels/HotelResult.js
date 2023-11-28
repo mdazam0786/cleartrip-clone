@@ -12,20 +12,13 @@ export default function HotelResult(props) {
   const navigate = useNavigate();
 
   async function Apicall(id) {
-    // setHotelId("6527dc50de44dd75f5271d99");
     console.log(id);
     setHotelId(id);
 
     console.log("getting hotels details");
     console.log(hotelId);
 
-
-
     const Url=`https://academics.newtonschool.co/api/v1/bookingportals/hotel/${id}`;
-
-    // const Url="https://academics.newtonschool.co/api/v1/bookingportals/hotel/6527dc50de44dd75f5271d99";
-
-
 
     console.log(Url);
     const response = await fetch(Url, {
@@ -39,9 +32,7 @@ export default function HotelResult(props) {
     setHotelDetails(data?.data);
     // console.log(hotelData);
 
-    // Pass the hotelData to the HotelResult component
     navigate(`/hotelDescription`, { state: { hotelDetailsData1: data?.data } });
-    // navigate("/hotelDescription", { state: { hotelDetailsData1: data?.data} });
   }
 
 
