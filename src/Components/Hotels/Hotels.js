@@ -32,7 +32,9 @@ export default function Hotels(props) {
       : "";
     console.log(formattedDay);
 
-    const Url = `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${searchParameter}"}&day="${formattedDay}`;
+    const limit= 100;
+
+    const Url = `https://academics.newtonschool.co/api/v1/bookingportals/hotel?search={"location":"${searchParameter}"}&day="${formattedDay}&limit=${limit}`;
 
     console.log(Url);
     const response = await fetch(Url, {

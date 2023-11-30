@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from "react";
-import './login.css';
+import "./login.css";
 import { RxCross1 } from "react-icons/rx";
+import { Link, useNavigate } from "react-router-dom";
+import SignupByEmail from "../Signup/SignupByEmail";
+
 // import { useContext } from "react";
 // import { MyContext } from "../../MyContext";
 
-
-export default function Login({closeModal, setLoggedIn}) {
+export default function Login({ closeModal, setLoggedIn }) {
+  const navigate = useNavigate();
   // const [token, setToken] = useContext(MyContext);
   // for carousel of left side
   const [slide1, setSlide1] = useState(false);
-
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+
+  const openSignupModal = () => {
+    setIsSignupModalOpen(true);
+  };
+
+  const closeSignupModal = () => {
+    setIsSignupModalOpen(false);
+  };
 
   const changeEmail = (e) => {
     setEmail(e.target.value);
@@ -23,8 +35,6 @@ export default function Login({closeModal, setLoggedIn}) {
   const changePassword = (e) => {
     setPassword(e.target.value);
   };
-
-  
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -37,8 +47,8 @@ export default function Login({closeModal, setLoggedIn}) {
     console.log("Signup called");
     setEmail("");
     setLoading(true);
-    
-    try {   
+
+    try {
       const Url = `https://academics.newtonschool.co/api/v1/bookingportals/login`;
 
       console.log(Url);
@@ -55,8 +65,7 @@ export default function Login({closeModal, setLoggedIn}) {
           appType: "bookingportals",
         }),
       });
-      if(response.ok) 
-      {
+      if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.token);
         console.log(response);
@@ -65,24 +74,17 @@ export default function Login({closeModal, setLoggedIn}) {
         closeModal();
         // navigate("/flights");
         console.log("success");
-      }
-      else if(response.status === 400) 
-      {
+      } else if (response.status === 400) {
         console.log(response.status);
         const errorData = await response.json();
         setError(errorData.message);
       }
-    }
-    catch(error) 
-    {
-      console.log("Error fetching data: ",  error);
+    } catch (error) {
+      console.log("Error fetching data: ", error);
       setError("Error fetching data: ", error.message);
-    }
-    finally
-    {
+    } finally {
       setLoading(false);
     }
-
   }
 
   // useEffect(() => {
@@ -112,18 +114,35 @@ export default function Login({closeModal, setLoggedIn}) {
           <div className="signup-form">
             <div className="signup-field">
               <div className="signup-input-field">
-                <input type="text" placeholder="Enter email" value={email} onChange={changeEmail}/>
+                <input
+                  type="text"
+                  placeholder="Enter email"
+                  value={email}
+                  onChange={changeEmail}
+                />
               </div>
               <div className="signup-input-field">
-                <input type="text" placeholder="Enter password" value={password} onChange={changePassword}/>
+                <input
+                  type="text"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={changePassword}
+                />
               </div>
               {error && <div className="error-message">{error}</div>}
-              <button type="submit" className="signup-btn" onClick={Apicall} disabled={loading}>
-                Login 
+              <button
+                type="submit"
+                className="signup-btn"
+                onClick={Apicall}
+                disabled={loading}
+              >
+                Login
               </button>
-              <div className="btn-below-text">
-                New User Please Signup Here
-              </div>
+              <Link className="btn-below-text" to="#" onClick={openSignupModal}>
+                <div >
+                  New User Please Signup Here
+                </div>
+              </Link>
             </div>
             <div className="signup-agreement">
               <div className="bor-color"></div>
@@ -149,6 +168,9 @@ export default function Login({closeModal, setLoggedIn}) {
           </div>
         </div>
       </div>
+      {isSignupModalOpen && (
+        <SignupByEmail closeModal={closeSignupModal} />
+      )}
     </div>
   );
 }

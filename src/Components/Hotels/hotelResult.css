@@ -22,7 +22,7 @@
   margin-top: 20px;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   column-gap: 10px;
 }
 .filter-title {
@@ -34,13 +34,18 @@
 .filter-content{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   column-gap: 10px;
   /* overflow-y: hidden; */
 }
 .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
   border: 1px solid #a1a1a1;
   border-radius: 20px;
-  padding: 8px;
+  padding: 5px;
   
 }
 

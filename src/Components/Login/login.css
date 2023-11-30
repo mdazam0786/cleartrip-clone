@@ -41,6 +41,7 @@
     padding: 0px 32px;
     padding-bottom: 15px;
     line-height: 74px;
+    cursor: pointer;
 
 }
 .signup-form {
@@ -97,10 +98,16 @@
 
 
 .btn-below-text {
-    margin-top: 12px;
+    /* margin-top: 12px; */
     /* font-size: 12px; */
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
+    color: black;
+   
+}
+.btn-below-text div {
+    padding-top: 10px;
 }
 
 
