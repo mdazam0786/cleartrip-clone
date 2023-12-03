@@ -32,6 +32,24 @@
     line-height: 40px;
 }
 
+.hotel-rating {
+    display: flex;
+    column-gap: 5px;
+    color: #62676d ;
+
+}
+.rating-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+.rating-logo div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
 
 
 

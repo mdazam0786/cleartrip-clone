@@ -26,27 +26,35 @@
   column-gap: 10px;
 }
 .filter-title {
+  width: fit-content;
   font-size: 16px;
   font-weight: 600;
   color: #116cff;
   cursor: pointer;
 }
+.filter-title div {
+  width: max-content;
+}
+
 .filter-content{
   display: flex;
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
-  /* overflow-y: hidden; */
 }
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: fit-content;
+  width: auto;
   border: 1px solid #a1a1a1;
   border-radius: 20px;
   padding: 5px;
+  cursor: pointer;
   
+}
+.content div {
+  width: 70px;
 }
 
 .content select {
@@ -59,7 +67,6 @@
   outline: none;
 
 }
-
 
 /* .result-search  */
 .result-search{
@@ -102,4 +109,157 @@
   margin: 10px;
   
 }
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-head div {
+  color: #116cff;
+  cursor: pointer;
+}
+
+.modal-body {
+  max-width: 600px;
+  max-height: 448px;
+  overflow-y: scroll;
+ 
+}
+.modal-deals {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.modal-deals-container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  row-gap: 20px;
+  
+}
+.modal-deal-check {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  
+}
+.modal-deal-check input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.modal-deals span{
+  padding-left: 34px;
+  color: #8f8989;
+  font-size: 14px;
+}
+.modal-star-catogories {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.modal-star-option {
+   display: flex;
+   align-items: center;
+   column-gap: 20px;
+
+}
+.modal-star-option div {
+  width: fit-content;
+  padding: 6px 8px;
+  white-space: nowrap;
+  border-style: solid;
+  border-radius: 30px;
+  border-width: 1.5px;
+  cursor: pointer;
+  border-color: rgb(26, 26, 26);
+
+}
+.modal-price {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.modal-rating {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.modal-location {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.location-input {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  height: 48px;
+  margin-top: 20px;
+  border: 1px solid #a1a1a1 ;
+  border-radius: 5px;
+}
+.location-modal-icon{
+  width: 25px;
+  height: 25px;
+  padding-left: 20px;
+  font-weight: 200;
+  color: #a1a1a1;
+}
+
+.location-input input {
+  border: none;
+  margin-left: 10px;
+  outline: none;
+}
+.location-input input:focus{
+  outline: none;
+
+}
+.location-input:focus-within .location-modal-icon {
+  color: #ffa183;
+}
+.location-input:hover {
+  border-color: black;
+}
+.location-input:focus-within{
+  color: black;
+}
+.modal-amenities {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.amenities-input{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  row-gap: 20px;
+
+}
+.amenities-input-check {
+  display: flex;
+  column-gap: 10px;
+}
+.amenities-input input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.modal-inclusion {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.inclusion-content {
+  display: flex;
+  column-gap: 20px;
+}
+.inclusion-content div {
+  display: flex;
+  
+}
+.inclusion-content-inner {
+  border: 1px solid #a8a1a1;
+  border-radius: 20px;
+  padding: 10px;
+  column-gap: 10px;
+  width: fit-content;
+  cursor: pointer;
+}
+
 

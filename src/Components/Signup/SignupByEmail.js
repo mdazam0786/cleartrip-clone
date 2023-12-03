@@ -3,7 +3,7 @@ import "./signupByEmail.css";
 import { RxCross1 } from "react-icons/rx";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-import Login from "../Login/Login";
+
 
 export default function SignupByEmail({ closeModal }) {
   const [slide, setSlide] = useState(false);
