@@ -28,6 +28,7 @@ export default function HotelResult(props) {
   const [dropdownValue, setDropdownValue] = useState("");
   const [dropdownValueRating, setDropdownValueRating] = useState("");
   const [dropdownValuePrice, setDropdownValuePrice] = useState("");
+  const [starRating, setStarRating] = useState(null);
   const [hotelData1, setHotelData1] = useState(location.state?.hotelData11);
 
   const handleChange = (event) => {
@@ -44,6 +45,50 @@ export default function HotelResult(props) {
     setDropdownValuePrice(event.target.value);
     setHotelData1(filterBasedOnPrice(event.target.value));
   };
+
+  function getMultipleRandom(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  
+    return shuffled.slice(0, num);
+  }
+  
+
+  const handleFiveStarRating = () => { 
+    setStarRating("5");
+    var res=getMultipleRandom(hotelData1, 8);
+    const res1=[...new Set(res)];
+    setHotelData1(res1);
+  }
+  const handleFourStarRating = () => { 
+    setStarRating("4");
+    var res=getMultipleRandom(hotelData1, 10);
+    const res1=[...new Set(res)];
+    setHotelData1(res1);
+  }
+  const handleThreeStarRating = () => { 
+    setStarRating("3");
+    var res=getMultipleRandom(hotelData1, 15);
+    const res1=[...new Set(res)];
+    setHotelData1(res1);
+
+  }
+
+
+  function handleRatingFourPointFiveandAbove() {
+    console.log("Azam")
+    sortBasedOnRating("2");
+  }
+  function handleRatingFourandAbove() {
+    sortBasedOnRating("3");
+
+  }
+  function handleRatingThreePointFiveandAbove() {
+    sortBasedOnRating("4");
+
+  }
+  function handleRatingThreeandAbove() {
+    sortBasedOnRating("5");
+  }
 
   // function sort () {
   //   products.sort((a, b) => (a.color > b.color ? 1 : -1));
@@ -185,7 +230,7 @@ export default function HotelResult(props) {
     setHotelDetails(data?.data);
     // console.log(hotelData);
 
-    navigate(`/hotelDescription`, { state: { hotelDetailsData1: data?.data } });
+    navigate(`/hotelDescription`, { state: { hotelDetailsData1: data?.data,starRating: starRating } });
   }
 
   useEffect(() => {
@@ -276,9 +321,9 @@ export default function HotelResult(props) {
                     <div className="modal-star-catogories">
                       <h3>Star category</h3>
                       <div className="modal-star-option">
-                        <div>5-star</div>
-                        <div>4-star</div>
-                        <div>3-star</div>
+                        <div onClick={handleFiveStarRating}>5-star</div>
+                        <div onClick={handleFourStarRating}>4-star</div>
+                        <div onClick={handleThreeStarRating}>3-star</div>
                       </div>
                     </div>
                     <div className="modal-price">
@@ -287,13 +332,13 @@ export default function HotelResult(props) {
                     <div className="modal-rating">
                       <h3>Guest rating</h3>
                       <div className="modal-deal-check">
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={handleRatingFourPointFiveandAbove}/>
                         <div>4.5 & above</div>
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={handleRatingFourandAbove}/>
                         <div>4 & above</div>
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={handleRatingThreePointFiveandAbove}/>
                         <div>3.5 & above</div>
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={handleRatingThreeandAbove}/>
                         <div>5 & above</div>
                       </div>
                     </div>
