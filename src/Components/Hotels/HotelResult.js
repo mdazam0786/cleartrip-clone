@@ -76,18 +76,18 @@ export default function HotelResult(props) {
 
   function handleRatingFourPointFiveandAbove() {
     console.log("Azam")
-    sortBasedOnRating("2");
+    setHotelData1(sortBasedOnRating("2"));
   }
   function handleRatingFourandAbove() {
-    sortBasedOnRating("3");
+    setHotelData1(sortBasedOnRating("3"));
 
   }
   function handleRatingThreePointFiveandAbove() {
-    sortBasedOnRating("4");
+    setHotelData1(sortBasedOnRating("4"));
 
   }
   function handleRatingThreeandAbove() {
-    sortBasedOnRating("5");
+    setHotelData1(sortBasedOnRating("5"));
   }
 
   // function sort () {
@@ -339,7 +339,7 @@ export default function HotelResult(props) {
                         <input type="checkbox" onChange={handleRatingThreePointFiveandAbove}/>
                         <div>3.5 & above</div>
                         <input type="checkbox" onChange={handleRatingThreeandAbove}/>
-                        <div>5 & above</div>
+                        <div>3 & above</div>
                       </div>
                     </div>
                     <div className="modal-location">

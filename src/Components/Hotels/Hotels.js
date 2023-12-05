@@ -127,7 +127,7 @@ export default function Hotels(props) {
           </div>
         </div>
       </div>
-      {/* {hotelData && <HotelResult result={hotelData} />} */}
+    
       
     </div>
   );
